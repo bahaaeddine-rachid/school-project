@@ -1,7 +1,6 @@
 package com.example.demo.models;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -15,9 +14,7 @@ public class Note {
     @Column(name="note_id")
     Integer id;
     String typenote;
-    float note1;
-    float note2;
-    float note3;
+    float note;
 
     @Column(name = "etudiant_id")
     Integer etudiantId;

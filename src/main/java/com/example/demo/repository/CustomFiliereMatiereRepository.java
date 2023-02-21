@@ -5,7 +5,5 @@ import com.example.demo.models.FiliereMatiere;
 import java.util.List;
 
 public interface CustomFiliereMatiereRepository {
-    List<FiliereMatiere> findmatierebyfiliere(int id);
-    List<FiliereMatiere>findAllNiveau();
-
+    List<FiliereMatiere> findmatierebyfiliere(int id, int niveau);
 }

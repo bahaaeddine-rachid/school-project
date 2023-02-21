@@ -25,7 +25,14 @@ FiliereMatiereId id;
     @JoinColumn(name="matiere_id")
     Matiere matiere;
 
-    Integer niveau ;
+    @Column(name = "niveau_id")
+    Integer niveauId;
+
+    @MapsId("niveauId")
+    @ManyToOne
+    @JoinColumn(name = "niveau_id" ,nullable=false)
+    private Niveau niveau = new Niveau();
+
 
     @Override
     public boolean equals(Object o) {
