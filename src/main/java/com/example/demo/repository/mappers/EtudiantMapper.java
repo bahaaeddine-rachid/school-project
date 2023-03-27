@@ -2,7 +2,6 @@ package com.example.demo.repository.mappers;
 
 
 import com.example.demo.models.Etudiant;
-import com.example.demo.models.Filiere;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

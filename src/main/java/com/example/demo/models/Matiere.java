@@ -2,6 +2,7 @@ package com.example.demo.models;
 
 
 import com.example.demo.DTO.MatiereDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -33,6 +34,7 @@ public class Matiere {
 
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "proffesseur_id" ,nullable=false)
     private Proffesseur proffesseur;
 

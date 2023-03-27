@@ -26,6 +26,9 @@ public class FiliereMatiereService {
     }
 
 
+    public List<FiliereMatiere> findAllFiliereMatiere(){
+        return filiereMatiereRepository.findAll();
+    }
 
 
 }

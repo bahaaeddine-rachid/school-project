@@ -16,5 +16,10 @@ public class NoteService {
 
         return noteRepository.findnoteetudiantbymatiere(id);
     }
+
+    public List<Note> findnoteetudiantbyetudiant(int id){
+
+        return noteRepository.findnoteetudiantbyetudiant(id);
+    }
 }
 

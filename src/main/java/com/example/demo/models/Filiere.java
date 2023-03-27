@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import com.example.demo.DTO.FiliereDTO;
+import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -24,7 +25,6 @@ public class Filiere {
         this.id = filiere.getId();
         this.nomfiliere = filiere.getNomfiliere();
         this.abreviation = filiere.getAbreviation();
-
 
     }
 

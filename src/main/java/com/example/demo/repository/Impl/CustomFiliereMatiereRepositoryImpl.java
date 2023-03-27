@@ -21,16 +21,15 @@ public class CustomFiliereMatiereRepositoryImpl implements CustomFiliereMatiereR
 
 
     @Override
-    public List<FiliereMatiere> findmatierebyfiliere(int id,int niveau){
-        QFiliereMatiere qFiliereMatiere=QFiliereMatiere.filiereMatiere;
-        QFiliere qFiliere=QFiliere.filiere;
+    public List<FiliereMatiere> findmatierebyfiliere(int id, int niveau) {
+        QFiliereMatiere qFiliereMatiere = QFiliereMatiere.filiereMatiere;
+        QFiliere qFiliere = QFiliere.filiere;
         return new JPAQuery<FiliereMatiere>(em)
                 .select(qFiliereMatiere)
                 .from(qFiliereMatiere)
-                .where(qFiliere.id.eq(id),qFiliereMatiere.niveau.niveau.eq(niveau))
+                .where(qFiliere.id.eq(id),qFiliereMatiere.niveau.niveau.eq(niveau)).distinct()
                 .fetch();
     }
-
 
 
 }

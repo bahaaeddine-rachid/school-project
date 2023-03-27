@@ -4,9 +4,11 @@ import com.example.demo.DTO.EtudiantDTO;
 import com.example.demo.models.Etudiant;
 
 import com.example.demo.models.Filiere;
+import com.example.demo.models.FiliereMatiere;
 import com.example.demo.models.Note;
 import com.example.demo.repository.EtudiantRepository;
 
+import com.example.demo.repository.FiliereMatiereRepository;
 import com.example.demo.repository.FiliereRepository;
 import com.example.demo.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ public class EtudiantService {
     EtudiantRepository etudiantRepository;
     @Autowired
     FiliereRepository filiereRepository;
+    @Autowired
+    private FiliereMatiereRepository filiereMatiereRepository;
 
 
     public List<Etudiant> findAllEtudiants(){
@@ -41,6 +45,7 @@ public class EtudiantService {
             etu.setFiliere(filiere);
             etudiantRepository.save(etu);
         }
+
         return etu;
     }
 
@@ -50,7 +55,10 @@ public class EtudiantService {
             return etudiantRepository.findEtudiantbyFiliere(id);
     }
 
+    public List<FiliereMatiere> findmatierebyfiliere(int id, int niveau){
 
+        return filiereMatiereRepository.findmatierebyfiliere(id,niveau);
+    }
     public void deleteEtudiant(int id){
         etudiantRepository.deleteById(id);
     }

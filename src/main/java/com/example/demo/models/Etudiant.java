@@ -5,6 +5,9 @@ import lombok.Data;
 
 
 import javax.persistence.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 @Data
 @Entity
 @Table(name="etudiant")
@@ -18,21 +21,25 @@ public class Etudiant {
     String datedenaissance;
     String sexe;
 
+    @Column(name = "filiere_id")
+    Integer FiliereId;
+
+    @MapsId("filiereId")
     @ManyToOne
     @JoinColumn(name = "filiere_id" ,nullable=false)
     public Filiere filiere = new Filiere();
 
+
+
     public Etudiant(EtudiantDTO etudiant) {
-        this.id = etudiant.getId();
+
         this.nom = etudiant.getNom();
         this.prenom = etudiant.getPrenom();
-        this.datedenaissance = etudiant.getDateNaissance();
+        this.datedenaissance=etudiant.getDatedenaissance();
         this.sexe = etudiant.getSexe();
-
     }
 
     public Etudiant() {
-
     }
 
     @Override

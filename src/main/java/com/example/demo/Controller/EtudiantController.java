@@ -43,7 +43,7 @@ public class EtudiantController {
 
 
 
-    @PostMapping(value = "/deleteEtudiant")
+    @DeleteMapping(value = "/deleteEtudiant")
     public ResponseEntity<Boolean> deleteEtudiant(@RequestParam int id) {
         etudiantService.deleteEtudiant(id);
         log.info("deleted student");

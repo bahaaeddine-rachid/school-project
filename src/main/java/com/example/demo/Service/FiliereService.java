@@ -1,9 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.DTO.FiliereDTO;
-import com.example.demo.models.Etudiant;
 import com.example.demo.models.Filiere;
-import com.example.demo.models.FiliereMatiere;
 import com.example.demo.repository.FiliereRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

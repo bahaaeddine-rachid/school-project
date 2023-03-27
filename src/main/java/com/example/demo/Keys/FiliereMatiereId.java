@@ -22,8 +22,6 @@ public class FiliereMatiereId implements Serializable {
     }
 
     public FiliereMatiereId() {
-
-
     }
 
     public int getFiliereId() {

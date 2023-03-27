@@ -24,4 +24,9 @@ public class NoteController {
     public ResponseEntity<List<Note>> findnoteetudiantbymatiere(@RequestParam int id){
         return ResponseEntity.ok(noteService.findnoteetudiantbymatiere(id));
     }
+
+    @RequestMapping(value="/findnoteetudiantbyetudiantId", method = RequestMethod.GET)
+    public ResponseEntity<List<Note>> findnoteetudiantbyetudiant(@RequestParam int id){
+        return ResponseEntity.ok(noteService.findnoteetudiantbyetudiant(id));
+    }
 }

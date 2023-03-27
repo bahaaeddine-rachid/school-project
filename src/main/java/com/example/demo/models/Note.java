@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Data
 @ToString
 @Entity
@@ -13,8 +15,9 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="note_id")
     Integer id;
-    String typenote;
-    float note;
+    float controle;
+    float examen;
+    float tp;
 
     @Column(name = "etudiant_id")
     Integer etudiantId;
@@ -33,5 +36,8 @@ public class Note {
     @ManyToOne()
     @JoinColumn(name = "matiere_id" ,nullable=false)
     private Matiere matiere = new Matiere();
+
+
+
 
 }

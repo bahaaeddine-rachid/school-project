@@ -2,9 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.DTO.FiliereDTO;
 import com.example.demo.Service.FiliereService;
-import com.example.demo.models.Etudiant;
-import com.example.demo.models.Filiere;
-import com.example.demo.models.FiliereMatiere;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

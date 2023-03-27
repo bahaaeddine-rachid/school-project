@@ -8,4 +8,6 @@ public class EtudiantClasse {
 
     @ManyToMany(mappedBy = "etudiants")
     List<Classe> classes ;
+
+
 }

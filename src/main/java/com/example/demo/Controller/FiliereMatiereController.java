@@ -2,6 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Service.FiliereMatiereService;
 import com.example.demo.Service.NiveauService;
+import com.example.demo.models.Etudiant;
 import com.example.demo.models.FiliereMatiere;
 import com.example.demo.models.Niveau;
 import com.example.demo.repository.NiveauRepository;
@@ -27,6 +28,14 @@ public class FiliereMatiereController {
     @RequestMapping(value="/findmatierebyfiliere", method = RequestMethod.GET)
     public ResponseEntity<List<FiliereMatiere>> findmatierebyfiliere(@RequestParam int id,int niveau){
         return ResponseEntity.ok(filiereMatiereService.findmatierebyfiliere(id,niveau));
+    }
+
+    @GetMapping(value = "/findAllFiliereMatiere")
+    public ResponseEntity<List<FiliereMatiere>> findAllFiliereMatiere() {
+
+        List<FiliereMatiere> result = filiereMatiereService.findAllFiliereMatiere();
+        return ResponseEntity.ok(result);
+
     }
 
 

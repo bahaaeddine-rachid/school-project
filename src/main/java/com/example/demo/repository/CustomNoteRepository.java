@@ -7,5 +7,6 @@ import java.util.List;
 public interface CustomNoteRepository {
 
     List<Note> findnoteetudiantbymatiere(int id);
+    List<Note> findnoteetudiantbyetudiant(int id);
 
 }

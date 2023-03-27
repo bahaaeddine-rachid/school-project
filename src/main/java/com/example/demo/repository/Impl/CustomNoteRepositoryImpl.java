@@ -20,13 +20,20 @@ public class CustomNoteRepositoryImpl  implements CustomNoteRepository {
     private EntityManager em;
     @Override
     public List<Note> findnoteetudiantbymatiere(int id){
-        QNote qNote=QNote.note1;
+        QNote qNote=QNote.note;
         return new JPAQuery<Note>(em)
                 .select(qNote)
                 .from(qNote)
                 .where(qNote.matiereId.eq(id))
                 .fetch();
     }
-
-
+    @Override
+    public List<Note> findnoteetudiantbyetudiant(int id){
+        QNote qNote=QNote.note;
+        return new JPAQuery<Note>(em)
+                .select(qNote)
+                .from(qNote)
+                .where(qNote.etudiantId.eq(id))
+                .fetch();
+    }
 }
