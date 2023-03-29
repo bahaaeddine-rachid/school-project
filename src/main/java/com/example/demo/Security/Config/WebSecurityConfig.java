@@ -67,6 +67,9 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .and()
                 .addFilterBefore(new AuthTokenFilter(jwtConfig,jwtTokenManager,userService,handlerExceptionResolver), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests().antMatchers("/user/**").permitAll()
+                .and().authorizeRequests().antMatchers("/etudiant/**").permitAll()
+                .and().authorizeRequests().antMatchers("/note/**").permitAll()
+
                 .anyRequest().authenticated();
     }
 

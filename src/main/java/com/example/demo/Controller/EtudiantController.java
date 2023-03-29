@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.DTO.EtudiantDTO;
+import com.example.demo.Exceptions.InternalServerException;
 import com.example.demo.Service.EtudiantService;
 import com.example.demo.Service.FiliereService;
 import com.example.demo.models.Etudiant;
@@ -90,6 +91,13 @@ public class EtudiantController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping(value = "/test")
+    public void test(){
+        throw  new InternalServerException("error test");
+//        return  ResponseEntity.ok(true);
+
     }
 }
 
